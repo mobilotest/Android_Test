@@ -38,5 +38,6 @@
 
     <string name="great">GREAT JOB!</string>
     <string name="fail">TRY AGAIN!</string>
+    <string name="empty">No answer has been selected!</string>
 
 </resources>
