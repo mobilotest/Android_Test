@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         radioGroup3 = (RadioGroup) findViewById(R.id.radioGroup3);
         radioGroup4 = (RadioGroup) findViewById(R.id.radioGroup4);
 
+        // correct answers
         first = (RadioButton) findViewById(R.id.rb1_1);
         second = (RadioButton) findViewById(R.id.rb2_3);
         third = (RadioButton) findViewById(R.id.rb3_2);
@@ -85,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
         img_three.setImageResource(R.drawable.images_3);
         img_four = (ImageView) findViewById(R.id.imageView_4);
         img_four.setImageResource(R.drawable.images_4);
-        img_one = (ImageView) findViewById(R.id.imageView_5);
-        img_one.setImageResource(R.drawable.images_5);
-        img_two = (ImageView) findViewById(R.id.imageView_6);
-        img_two.setImageResource(R.drawable.images_6);
-        img_three = (ImageView) findViewById(R.id.imageView_7);
-        img_three.setImageResource(R.drawable.images_7);
-        img_four = (ImageView) findViewById(R.id.imageView_8);
-        img_four.setImageResource(R.drawable.images_8);
+        img_five = (ImageView) findViewById(R.id.imageView_5);
+        img_five.setImageResource(R.drawable.images_5);
+        img_six = (ImageView) findViewById(R.id.imageView_6);
+        img_six.setImageResource(R.drawable.images_6);
+        img_seven = (ImageView) findViewById(R.id.imageView_7);
+        img_seven.setImageResource(R.drawable.images_7);
+        img_eight = (ImageView) findViewById(R.id.imageView_8);
+        img_eight.setImageResource(R.drawable.images_8);
 
         btnDone = (Button) findViewById(R.id.done);
         btnHelp = (Button) findViewById(R.id.help);
@@ -133,27 +134,41 @@ public class MainActivity extends AppCompatActivity {
                 int selectedId3 = radioGroup1.getCheckedRadioButtonId();
                 int selectedId4 = radioGroup1.getCheckedRadioButtonId();
 
-                // checkboxes 1
-                if (uno.isChecked() && tries.isChecked()) {
-                    five.setText(R.string.correct);
-                } else {
-                    five.setText(R.string.explanation_5);
-                    uno.setChecked(false);
-                    dos.setChecked(false);
-                    tries.setChecked(false);
-                    quatro.setChecked(false);
+                String edit_text_1_validation = answer_edit1.getText().toString();
+                if (edit_text_1_validation.equals(R.string.answer_25)) {
+                    seven.setText(R.string.correct);
+                }else{
+                    seven.setText(R.string.explanation_7);
                 }
 
-                // checkboxes 2
-                if (sinco.isChecked() && seis.isChecked()) {
-                    six.setText(R.string.correct);
-                } else {
-                    six.setText(R.string.explanation_6);
-                    sinco.setChecked(false);
-                    seis.setChecked(false);
-                    siete.setChecked(false);
-                    ocho.setChecked(false);
+                String edit_text_2_validation = answer_edit1.getText().toString();
+                if (edit_text_2_validation.equals(R.string.answer_26)){
+                    eight.setText(R.string.correct);
+                }else{
+                    eight.setText(R.string.explanation_8);
                 }
+
+//                // checkboxes 1
+//                if (uno.isChecked() && tries.isChecked()) {
+//                    five.setText(R.string.correct);
+//                } else {
+//                    five.setText(R.string.explanation_5);
+//                    uno.setChecked(false);
+//                    dos.setChecked(false);
+//                    tries.setChecked(false);
+//                    quatro.setChecked(false);
+//                }
+//
+//                // checkboxes 2
+//                if (sinco.isChecked() && seis.isChecked()) {
+//                    six.setText(R.string.correct);
+//                } else {
+//                    six.setText(R.string.explanation_6);
+//                    sinco.setChecked(false);
+//                    seis.setChecked(false);
+//                    siete.setChecked(false);
+//                    ocho.setChecked(false);
+//                }
 
                 // radio buttons
                 if (selectedId1 == -1 || selectedId2 == -1 || selectedId3 == -1 || selectedId4 == -1) {
@@ -272,23 +287,6 @@ public class MainActivity extends AppCompatActivity {
                     three.setText(R.string.correct);
                     four.setText(R.string.correct);
                 }
-
-                String edit_text_1_validation = answer_edit1.getText().toString();
-
-                if (edit_text_1_validation.equalsIgnoreCase(String.valueOf(R.string.answer_25))){
-                    seven.setText(R.string.correct);
-                }else{
-                    seven.setText(R.string.explanation_7);
-                }
-
-                String edit_text_2_validation = answer_edit2.getText().toString();
-
-                if (edit_text_2_validation.equalsIgnoreCase(String.valueOf(R.string.answer_26))){
-                    eight.setText(R.string.correct);
-                }else{
-                    eight.setText(R.string.explanation_8);
-                }
-
             }
         });
     }

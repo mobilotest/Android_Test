@@ -14,7 +14,7 @@
     <string name="answer_2">onSelect</string>
     <string name="answer_3">onClick</string>
     <string name="answer_4">ContentResolver</string>
-    <string name="answer_5">Active</string>
+    <string name="answer_5">Executed</string>
     <string name="answer_6">Paused</string>
     <string name="answer_7">Stopped</string>
     <string name="answer_8">Destroyed</string>
@@ -58,10 +58,10 @@
     <string name="q2"><font fgcolor='#FF00796B'>Question #2:</font></string> <!--green-->
     <string name="q3"><font fgcolor='#FF00796B'>Question #3:</font></string> <!--green-->
     <string name="q4"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
-    <string name="q5"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
-    <string name="q6"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
-    <string name="q7"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
-    <string name="q8"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
+    <string name="q5"><font fgcolor='#FF00796B'>Question #5:</font></string> <!--green-->
+    <string name="q6"><font fgcolor='#FF00796B'>Question #6:</font></string> <!--green-->
+    <string name="q7"><font fgcolor='#FF00796B'>Question #7:</font></string> <!--green-->
+    <string name="q8"><font fgcolor='#FF00796B'>Question #8:</font></string> <!--green-->
 
 
     <string name="great">GREAT JOB!</string>
@@ -69,5 +69,10 @@
     <string name="empty_radio">No answer has been selected in some radio button group!</string>
     <string name="empty_check">No answer has been selected in some checkbox selection!</string>
     <string name="empty_answers">No answer has been provided in some edit text field!</string>
+    <string name="hint">Enter text here:</string>
+
+    <string name="pick_one"><font fgcolor='#FF00796B'>Pick one of the choices:</font></string> <!--green-->
+    <string name="pick_more"><font fgcolor='#FF00796B'>Pick several choices:</font></string> <!--green-->
+
 
 </resources>

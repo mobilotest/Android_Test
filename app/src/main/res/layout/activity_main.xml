@@ -43,6 +43,13 @@
             android:orientation="vertical"
             android:layout_weight="1">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_one"
+                android:layout_margin="6dp"
+                android:textSize="12sp"/>
+
             <RadioGroup
                 android:id="@+id/radioGroup1"
                 android:layout_width="wrap_content"
@@ -116,6 +123,13 @@
             android:layout_margin="16dp"
             android:orientation="vertical"
             android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_one"
+                android:layout_margin="6dp"
+                android:textSize="12sp"/>
 
             <RadioGroup
                 android:id="@+id/radioGroup2"
@@ -192,6 +206,13 @@
             android:orientation="vertical"
             android:layout_weight="1">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_one"
+                android:layout_margin="6dp"
+                android:textSize="12sp"/>
+
             <RadioGroup
                 android:id="@+id/radioGroup3"
                 android:layout_width="wrap_content"
@@ -265,6 +286,13 @@
             android:layout_margin="16dp"
             android:orientation="vertical"
             android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_one"
+                android:layout_margin="6dp"
+                android:textSize="12sp"/>
 
             <RadioGroup
                 android:id="@+id/radioGroup4"
@@ -340,6 +368,12 @@
             android:orientation="vertical"
             android:layout_weight="1">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_more"
+                android:layout_margin="6dp"
+                android:textSize="12sp"/>
 
             <CheckBox
                 android:id="@+id/checkBox1"
@@ -413,6 +447,13 @@
             android:layout_margin="16dp"
             android:orientation="vertical"
             android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_more"
+                android:layout_margin="6dp"
+                android:textSize="12sp"/>
 
             <CheckBox
                 android:id="@+id/checkBox5"
@@ -496,7 +537,7 @@
                     android:id="@+id/edit_text1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="hint" />
+                    android:hint="@string/hint" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -556,7 +597,7 @@
                     android:id="@+id/edit_text2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="hint" />
+                    android:hint="@string/hint" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
