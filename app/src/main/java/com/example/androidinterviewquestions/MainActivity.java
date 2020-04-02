@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -22,9 +23,13 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup4;
 
     private CheckBox uno, dos, tries, quatro, sinco, seis, siete, ocho;
-
     private RadioButton first, second, third, fourth;
+
     private TextView explanation;
+
+    private TextView answer_edit1;
+    private TextView answer_edit2;
+
     private Button btnDone;
     private Button btnHelp;
 
@@ -51,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addListenerOnChkIos();
-
         radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup1);
         radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup2);
         radioGroup3 = (RadioGroup) findViewById(R.id.radioGroup3);
@@ -67,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         two = (TextView) findViewById(R.id.explanation_2);
         three = (TextView) findViewById(R.id.explanation_3);
         four = (TextView) findViewById(R.id.explanation_4);
-
         five = (TextView) findViewById(R.id.explanation_5);
         six = (TextView) findViewById(R.id.explanation_6);
         seven = (TextView) findViewById(R.id.explanation_7);
@@ -95,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
         btnDone = (Button) findViewById(R.id.done);
         btnHelp = (Button) findViewById(R.id.help);
 
-
+        answer_edit1 = (EditText) findViewById(R.id.edit_text1);
+        answer_edit2 = (EditText) findViewById(R.id.edit_text2);
 
         // Uncheck or reset the radio buttons initially
         radioGroup1.clearCheck();
@@ -110,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
             // Check which radio button has been clicked
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                 // Get the selected Radio Button
                 RadioButton radioButton1 = (RadioButton) radioGroup1.findViewById(checkedId);
                 RadioButton radioButton2 = (RadioButton) radioGroup2.findViewById(checkedId);
@@ -152,8 +154,6 @@ public class MainActivity extends AppCompatActivity {
                     siete.setChecked(false);
                     ocho.setChecked(false);
                 }
-
-
 
                 // radio buttons
                 if (selectedId1 == -1 || selectedId2 == -1 || selectedId3 == -1 || selectedId4 == -1) {
@@ -272,6 +272,23 @@ public class MainActivity extends AppCompatActivity {
                     three.setText(R.string.correct);
                     four.setText(R.string.correct);
                 }
+
+                String edit_text_1_validation = answer_edit1.getText().toString();
+
+                if (edit_text_1_validation.equalsIgnoreCase(String.valueOf(R.string.answer_25))){
+                    seven.setText(R.string.correct);
+                }else{
+                    seven.setText(R.string.explanation_7);
+                }
+
+                String edit_text_2_validation = answer_edit2.getText().toString();
+
+                if (edit_text_2_validation.equalsIgnoreCase(String.valueOf(R.string.answer_26))){
+                    eight.setText(R.string.correct);
+                }else{
+                    eight.setText(R.string.explanation_8);
+                }
+
             }
         });
     }
@@ -293,6 +310,12 @@ public class MainActivity extends AppCompatActivity {
         two.setText(R.string.explanation_2);
         three.setText(R.string.explanation_3);
         four.setText(R.string.explanation_4);
+        five.setText(R.string.explanation_5);
+        six.setText(R.string.explanation_6);
+        seven.setText(R.string.explanation_7);
+        eight.setText(R.string.explanation_8);
+
+
     }
 
     public void toastMessage(int resource) {

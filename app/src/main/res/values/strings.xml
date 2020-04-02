@@ -2,7 +2,7 @@
     <string name="app_name">Android Interview Quiz</string>
 
     <string name="question_1">The requests from Content Provider class is handled by method</string>
-    <string name="question_2">The android component that manages the appearance and format on screen is called</string>
+    <string name="question_2">Which one is NOT the one of essential states of an activity?</string>
     <string name="question_3">The android component that shows the part of an activity on screen is called</string>
     <string name="question_4">By default in android studio during app development, the file that holds information about app\'s fundamental features and components is</string>
     <string name="question_5">Select which are Implicit intents?</string>
@@ -14,10 +14,10 @@
     <string name="answer_2">onSelect</string>
     <string name="answer_3">onClick</string>
     <string name="answer_4">ContentResolver</string>
-    <string name="answer_5">fragment</string>
-    <string name="answer_6">intent</string>
-    <string name="answer_7">view</string>
-    <string name="answer_8">layout</string>
+    <string name="answer_5">Active</string>
+    <string name="answer_6">Paused</string>
+    <string name="answer_7">Stopped</string>
+    <string name="answer_8">Destroyed</string>
     <string name="answer_9">intent</string>
     <string name="answer_10">fragment</string>
     <string name="answer_11">view</string>
@@ -41,7 +41,7 @@
     <string name="answer_26">outside</string>
 
     <string name="explanation_1"><font fgcolor='#FFF44336'>The Content Resolver is the single, global instance in your application that provides access to your (and other applications\') content providers.</font></string> <!--red-->
-    <string name="explanation_2"><font fgcolor='#FFF44336'>In Android the term layout refers to defining how the View components are displayed on the screen relative to each other.</font></string> <!--red-->
+    <string name="explanation_2"><font fgcolor='#FFF44336'>Here they are: Active, Paused, Stopped, Destroyed.</font></string> <!--red-->
     <string name="explanation_3"><font fgcolor='#FFF44336'>A Fragment is a piece of an activity which enable more modular activity design. It will not be wrong if we say, a fragment is a kind of sub-activity.</font></string> <!--red-->
     <string name="explanation_4"><font fgcolor='#FFF44336'>The AndroidManifest.xml file contains information of your package, including components of the application such as activities, services, broadcast receivers, content providers etc.</font></string> <!--red-->
     <string name="explanation_5"><font fgcolor='#FFF44336'>Intents are messages that can be used to pass information to the various components of android.</font></string> <!--red-->
