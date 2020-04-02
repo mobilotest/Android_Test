@@ -5,6 +5,10 @@
     <string name="question_2">The android component that manages the appearance and format on screen is called</string>
     <string name="question_3">The android component that shows the part of an activity on screen is called</string>
     <string name="question_4">By default in android studio during app development, the file that holds information about app\'s fundamental features and components is</string>
+    <string name="question_5">Select which are Implicit intents?</string>
+    <string name="question_6">Methods belongs to fragment lifecycle?</string>
+    <string name="question_7">What method I should provide to the mediaPlayer to begin playing? play(), start() or flow()?</string>
+    <string name="question_8">Margin will be space added inside or outside the container?</string>
 
     <string name="answer_1">onCreate</string>
     <string name="answer_2">onSelect</string>
@@ -23,10 +27,29 @@
     <string name="answer_15">Build.gradle</string>
     <string name="answer_16">res/layout</string>
 
+    <string name="answer_17">Dial number</string>
+    <string name="answer_18">Order pizza</string>
+    <string name="answer_19">Send SMS</string>
+    <string name="answer_20">Download a file from the web</string>
+
+    <string name="answer_21">onCreateView()</string>
+    <string name="answer_22">onStart()</string>
+    <string name="answer_23">pause()</string>
+    <string name="answer_24">onReturn()</string>
+
+    <string name="answer_25">start()</string>
+    <string name="answer_26">outside</string>
+
     <string name="explanation_1"><font fgcolor='#FFF44336'>The Content Resolver is the single, global instance in your application that provides access to your (and other applications\') content providers.</font></string> <!--red-->
     <string name="explanation_2"><font fgcolor='#FFF44336'>In Android the term layout refers to defining how the View components are displayed on the screen relative to each other.</font></string> <!--red-->
     <string name="explanation_3"><font fgcolor='#FFF44336'>A Fragment is a piece of an activity which enable more modular activity design. It will not be wrong if we say, a fragment is a kind of sub-activity.</font></string> <!--red-->
-    <string name="explanation_4"><font fgcolor='#FFF44336'>The AndroidManifest. xml file contains information of your package, including components of the application such as activities, services, broadcast receivers, content providers etc.</font></string> <!--red-->
+    <string name="explanation_4"><font fgcolor='#FFF44336'>The AndroidManifest.xml file contains information of your package, including components of the application such as activities, services, broadcast receivers, content providers etc.</font></string> <!--red-->
+    <string name="explanation_5"><font fgcolor='#FFF44336'>Intents are messages that can be used to pass information to the various components of android.</font></string> <!--red-->
+    <string name="explanation_6"><font fgcolor='#FFF44336'>Here they are: onAttach(); onCreateView(); onViewCreated(); onActivityCreated(); onStart(); onStop(); onDestroyView(); onDestroy(); onDetach()</font></string> <!--red-->
+    <string name="explanation_7"><font fgcolor='#FFF44336'>Here they are: mediaPlayer.start(); mediaPlayer.pause(); mediaPlayer.reset();</font></string> <!--red-->
+    <string name="explanation_8"><font fgcolor='#FFF44336'>Margin is outer space of an element, while padding is inner space of an element.</font></string> <!--red-->
+
+    <string name="correct"><font fgcolor='#FF00796B'>CORRECT!</font></string> <!--green-->
 
     <string name="done">Done</string>
     <string name="help">Help</string>
@@ -35,9 +58,16 @@
     <string name="q2"><font fgcolor='#FF00796B'>Question #2:</font></string> <!--green-->
     <string name="q3"><font fgcolor='#FF00796B'>Question #3:</font></string> <!--green-->
     <string name="q4"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
+    <string name="q5"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
+    <string name="q6"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
+    <string name="q7"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
+    <string name="q8"><font fgcolor='#FF00796B'>Question #4:</font></string> <!--green-->
+
 
     <string name="great">GREAT JOB!</string>
     <string name="fail">TRY AGAIN!</string>
-    <string name="empty">No answer has been selected!</string>
+    <string name="empty_radio">No answer has been selected in some radio button group!</string>
+    <string name="empty_check">No answer has been selected in some checkbox selection!</string>
+    <string name="empty_answers">No answer has been provided in some edit text field!</string>
 
 </resources>
