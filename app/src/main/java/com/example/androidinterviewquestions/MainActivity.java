@@ -80,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
         correctAnswer_third = (RadioButton) findViewById(R.id.rb3_2);
         correctAnswer_fourth = (RadioButton) findViewById(R.id.rb4_1);
 
+        // explanations
+        explanation = (TextView) findViewById(R.id.text);
+
         explanation_one = (TextView) findViewById(R.id.explanation_1);
         explanation_two = (TextView) findViewById(R.id.explanation_2);
         explanation_three = (TextView) findViewById(R.id.explanation_3);
@@ -89,8 +92,7 @@ public class MainActivity extends AppCompatActivity {
         explanation_seven = (TextView) findViewById(R.id.explanation_7);
         explanation_eight = (TextView) findViewById(R.id.explanation_8);
 
-        explanation = (TextView) findViewById(R.id.text);
-
+        // images
         img_one = (ImageView) findViewById(R.id.imageView_1);
         img_one.setImageResource(R.drawable.images_1);
         img_two = (ImageView) findViewById(R.id.imageView_2);
@@ -108,9 +110,11 @@ public class MainActivity extends AppCompatActivity {
         img_eight = (ImageView) findViewById(R.id.imageView_9);
         img_eight.setImageResource(R.drawable.images_9);
 
+        // buttons
         btnDone = (Button) findViewById(R.id.done);
         btnHelp = (Button) findViewById(R.id.help);
 
+        // edit_text fields
         answer_edit1 = (EditText) findViewById(R.id.edit_text1);
         answer_edit2 = (EditText) findViewById(R.id.edit_text2);
 
@@ -122,51 +126,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // When submit button is clicked, Ge the Radio Button which is set
-                // If no Radio Button is set, -1 will be returned
+                // When submit button is clicked all validation will happened here:
                 int selectedId1 = radioGroup1.getCheckedRadioButtonId();
                 int selectedId2 = radioGroup1.getCheckedRadioButtonId();
                 int selectedId3 = radioGroup1.getCheckedRadioButtonId();
                 int selectedId4 = radioGroup1.getCheckedRadioButtonId();
 
-                TextInputEditText edit_text_1_validation = (TextInputEditText) findViewById(R.id.edit_text1);
-                if (edit_text_1_validation.getText().toString().equalsIgnoreCase(String.valueOf("start()"))) { // I don't understand why R.string.answer_25 doesn't work ;(
-                    explanation_seven.setText(R.string.correct);
-                } else {
-                    explanation_seven.setText(R.string.explanation_7);
-                }
-
-                TextInputEditText edit_text_2_validation = (TextInputEditText) findViewById(R.id.edit_text2);
-                if (edit_text_2_validation.getText().toString().equalsIgnoreCase(String.valueOf("outside"))) { // I don't understand why R.string.answer_26 doesn't work ;(
-                    explanation_eight.setText(R.string.correct);
-                } else {
-                    explanation_eight.setText(R.string.explanation_8);
-                }
-
-
-                // checkboxes 1
-                if (checkBox_uno.isChecked() && !checkBox_dos.isChecked() && checkBox_tres.isChecked() && !checkBox_quatro.isChecked()) {
-                    explanation_five.setText(R.string.correct);
-                } else {
-                    explanation_five.setText(R.string.explanation_5);
-                    checkBox_uno.setChecked(false);
-                    checkBox_dos.setChecked(false);
-                    checkBox_tres.setChecked(false);
-                    checkBox_quatro.setChecked(false);
-                }
-
-                // checkboxes 2
-                if (checkBox_sinco.isChecked() && checkBox_seis.isChecked() && !checkBox_siete.isChecked() && !checkBox_ocho.isChecked()) {
-                    explanation_six.setText(R.string.correct);
-                } else {
-                    explanation_six.setText(R.string.explanation_6);
-                    checkBox_sinco.setChecked(false);
-                    checkBox_seis.setChecked(false);
-                    checkBox_siete.setChecked(false);
-                    checkBox_ocho.setChecked(false);
-                }
-
                 // radio buttons
+                // If no Radio Button is set, -1 will be returned
                 if (selectedId1 == -1 || selectedId2 == -1 || selectedId3 == -1 || selectedId4 == -1) {
                     explanation_one.setText(R.string.explanation_1);
                     explanation_two.setText(R.string.explanation_2);
@@ -284,6 +251,44 @@ public class MainActivity extends AppCompatActivity {
                     explanation_four.setText(R.string.correct);
                 }
 
+                // checkboxes 1
+                if (checkBox_uno.isChecked() && !checkBox_dos.isChecked() && checkBox_tres.isChecked() && !checkBox_quatro.isChecked()) {
+                    explanation_five.setText(R.string.correct);
+                } else {
+                    explanation_five.setText(R.string.explanation_5);
+                    checkBox_uno.setChecked(false);
+                    checkBox_dos.setChecked(false);
+                    checkBox_tres.setChecked(false);
+                    checkBox_quatro.setChecked(false);
+                }
+
+                // checkboxes 2
+                if (checkBox_sinco.isChecked() && checkBox_seis.isChecked() && !checkBox_siete.isChecked() && !checkBox_ocho.isChecked()) {
+                    explanation_six.setText(R.string.correct);
+                } else {
+                    explanation_six.setText(R.string.explanation_6);
+                    checkBox_sinco.setChecked(false);
+                    checkBox_seis.setChecked(false);
+                    checkBox_siete.setChecked(false);
+                    checkBox_ocho.setChecked(false);
+                }
+
+                // input text 1
+                TextInputEditText edit_text_1_validation = (TextInputEditText) findViewById(R.id.edit_text1);
+                if (edit_text_1_validation.getText().toString().equalsIgnoreCase(String.valueOf("start()"))) { // I don't understand why R.string.answer_25 doesn't work ;(
+                    explanation_seven.setText(R.string.correct);
+                } else {
+                    explanation_seven.setText(R.string.explanation_7);
+                }
+
+                // input text 2
+                TextInputEditText edit_text_2_validation = (TextInputEditText) findViewById(R.id.edit_text2);
+                if (edit_text_2_validation.getText().toString().equalsIgnoreCase(String.valueOf("outside"))) { // I don't understand why R.string.answer_26 doesn't work ;(
+                    explanation_eight.setText(R.string.correct);
+                } else {
+                    explanation_eight.setText(R.string.explanation_8);
+                }
+
                 // grade calculator
                 scoreCounter();
             }
@@ -323,7 +328,7 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
         TextView toastMessage = (TextView) toast.getView().findViewById(android.R.id.message);
         toastMessage.setTextColor(Color.RED);
-        toastMessage.setTextSize(30);
+        toastMessage.setTextSize(25);
         toast.setGravity(Gravity.CENTER, 0, 500);
         toast.show();
     }
@@ -333,30 +338,30 @@ public class MainActivity extends AppCompatActivity {
      **/
     public void scoreCounter() {
         int correctSum = 0;
-        if (explanation_one.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_one.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        if (explanation_two.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_two.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        if (explanation_three.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_three.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        if (explanation_four.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_four.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        if (explanation_five.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_five.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        if (explanation_six.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_six.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        if (explanation_seven.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_seven.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        if (explanation_eight.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) {
+        if (explanation_eight.getText().toString().equalsIgnoreCase(String.valueOf("CORRECT!"))) { // I don't understand why R.string.correct doesn't work ;(
             correctSum++;
         }
-        toastMessage("Correct : " + correctSum + " / Wrong: " + (8 - correctSum));
+        toastMessage("Correct: " + correctSum + " / Wrong: " + (8 - correctSum));
     }
 }
