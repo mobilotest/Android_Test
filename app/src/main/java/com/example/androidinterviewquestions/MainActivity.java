@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup3;
     private RadioGroup radioGroup4;
 
-    private CheckBox uno, dos, tries, quatro, sinco, seis, siete, ocho;
-    private RadioButton first, second, third, fourth;
+    private CheckBox checkBox_uno, checkBox_dos, checkBox_tries, checkBox_quatro, checkBox_sinco, checkBox_seis, checkBox_siete, checkBox_ocho;
+    private RadioButton correctAnswer_first, correctAnswer_second, correctAnswer_third, correctAnswer_fourth;
 
     private TextView explanation;
 
@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private Button btnDone;
     private Button btnHelp;
 
-    private TextView one;
-    private TextView two;
-    private TextView three;
-    private TextView four;
-    private TextView five;
-    private TextView six;
-    private TextView seven;
-    private TextView eight;
+    private TextView explanation_one;
+    private TextView explanation_two;
+    private TextView explanation_three;
+    private TextView explanation_four;
+    private TextView explanation_five;
+    private TextView explanation_six;
+    private TextView explanation_seven;
+    private TextView explanation_eight;
 
     private ImageView img_one;
     private ImageView img_two;
@@ -62,19 +62,19 @@ public class MainActivity extends AppCompatActivity {
         radioGroup4 = (RadioGroup) findViewById(R.id.radioGroup4);
 
         // correct answers
-        first = (RadioButton) findViewById(R.id.rb1_1);
-        second = (RadioButton) findViewById(R.id.rb2_3);
-        third = (RadioButton) findViewById(R.id.rb3_2);
-        fourth = (RadioButton) findViewById(R.id.rb4_1);
+        correctAnswer_first = (RadioButton) findViewById(R.id.rb1_1);
+        correctAnswer_second = (RadioButton) findViewById(R.id.rb2_3);
+        correctAnswer_third = (RadioButton) findViewById(R.id.rb3_2);
+        correctAnswer_fourth = (RadioButton) findViewById(R.id.rb4_1);
 
-        one = (TextView) findViewById(R.id.explanation_1);
-        two = (TextView) findViewById(R.id.explanation_2);
-        three = (TextView) findViewById(R.id.explanation_3);
-        four = (TextView) findViewById(R.id.explanation_4);
-        five = (TextView) findViewById(R.id.explanation_5);
-        six = (TextView) findViewById(R.id.explanation_6);
-        seven = (TextView) findViewById(R.id.explanation_7);
-        eight = (TextView) findViewById(R.id.explanation_8);
+        explanation_one = (TextView) findViewById(R.id.explanation_1);
+        explanation_two = (TextView) findViewById(R.id.explanation_2);
+        explanation_three = (TextView) findViewById(R.id.explanation_3);
+        explanation_four = (TextView) findViewById(R.id.explanation_4);
+        explanation_five = (TextView) findViewById(R.id.explanation_5);
+        explanation_six = (TextView) findViewById(R.id.explanation_6);
+        explanation_seven = (TextView) findViewById(R.id.explanation_7);
+        explanation_eight = (TextView) findViewById(R.id.explanation_8);
 
         explanation = (TextView) findViewById(R.id.text);
 
@@ -102,10 +102,7 @@ public class MainActivity extends AppCompatActivity {
         answer_edit2 = (EditText) findViewById(R.id.edit_text2);
 
         // Uncheck or reset the radio buttons initially
-        radioGroup1.clearCheck();
-        radioGroup2.clearCheck();
-        radioGroup3.clearCheck();
-        radioGroup4.clearCheck();
+        resetAllRadioSelections();
 
         // Add the Listener to the RadioGroup
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -136,16 +133,16 @@ public class MainActivity extends AppCompatActivity {
 
                 String edit_text_1_validation = answer_edit1.getText().toString();
                 if (edit_text_1_validation.equals(R.string.answer_25)) {
-                    seven.setText(R.string.correct);
+                    explanation_seven.setText(R.string.correct);
                 }else{
-                    seven.setText(R.string.explanation_7);
+                    explanation_seven.setText(R.string.explanation_7);
                 }
 
                 String edit_text_2_validation = answer_edit1.getText().toString();
                 if (edit_text_2_validation.equals(R.string.answer_26)){
-                    eight.setText(R.string.correct);
+                    explanation_eight.setText(R.string.correct);
                 }else{
-                    eight.setText(R.string.explanation_8);
+                    explanation_eight.setText(R.string.explanation_8);
                 }
 
 //                // checkboxes 1
@@ -173,119 +170,119 @@ public class MainActivity extends AppCompatActivity {
                 // radio buttons
                 if (selectedId1 == -1 || selectedId2 == -1 || selectedId3 == -1 || selectedId4 == -1) {
                     toastMessage(R.string.empty_radio);
-                } else if (!first.isChecked() && !second.isChecked() && !third.isChecked() && !fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
-                    two.setText(R.string.explanation_2);
-                    three.setText(R.string.explanation_3);
-                    four.setText(R.string.explanation_4);
+                } else if (!correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
+                    explanation_two.setText(R.string.explanation_2);
+                    explanation_three.setText(R.string.explanation_3);
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup4.clearCheck();
                     radioGroup3.clearCheck();
                     radioGroup2.clearCheck();
                     radioGroup1.clearCheck();
-                } else if (first.isChecked() && !second.isChecked() && !third.isChecked() && !fourth.isChecked()) {
-                    two.setText(R.string.explanation_2);
-                    three.setText(R.string.explanation_3);
-                    four.setText(R.string.explanation_4);
+                } else if (correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_two.setText(R.string.explanation_2);
+                    explanation_three.setText(R.string.explanation_3);
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup4.clearCheck();
                     radioGroup3.clearCheck();
                     radioGroup2.clearCheck();
-                    one.setText(R.string.correct);
-                } else if (!first.isChecked() && second.isChecked() && !third.isChecked() && !fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
-                    three.setText(R.string.explanation_3);
-                    four.setText(R.string.explanation_4);
+                    explanation_one.setText(R.string.correct);
+                } else if (!correctAnswer_first.isChecked() && correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
+                    explanation_three.setText(R.string.explanation_3);
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup4.clearCheck();
                     radioGroup3.clearCheck();
                     radioGroup1.clearCheck();
-                    two.setText(R.string.correct);
-                } else if (!first.isChecked() && !second.isChecked() && third.isChecked() && !fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
-                    two.setText(R.string.explanation_2);
-                    four.setText(R.string.explanation_4);
+                    explanation_two.setText(R.string.correct);
+                } else if (!correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
+                    explanation_two.setText(R.string.explanation_2);
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup4.clearCheck();
                     radioGroup2.clearCheck();
                     radioGroup1.clearCheck();
-                    three.setText(R.string.correct);
-                } else if (!first.isChecked() && !second.isChecked() && !third.isChecked() && fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
-                    two.setText(R.string.explanation_2);
-                    three.setText(R.string.explanation_3);
+                    explanation_three.setText(R.string.correct);
+                } else if (!correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
+                    explanation_two.setText(R.string.explanation_2);
+                    explanation_three.setText(R.string.explanation_3);
                     radioGroup3.clearCheck();
                     radioGroup2.clearCheck();
                     radioGroup1.clearCheck();
-                    four.setText(R.string.correct);
-                } else if (first.isChecked() && second.isChecked() && !third.isChecked() && !fourth.isChecked()) {
-                    three.setText(R.string.explanation_3);
-                    four.setText(R.string.explanation_4);
+                    explanation_four.setText(R.string.correct);
+                } else if (correctAnswer_first.isChecked() && correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_three.setText(R.string.explanation_3);
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup4.clearCheck();
                     radioGroup3.clearCheck();
-                    one.setText(R.string.correct);
-                    two.setText(R.string.correct);
-                } else if (!first.isChecked() && second.isChecked() && third.isChecked() && !fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
-                    four.setText(R.string.explanation_4);
+                    explanation_one.setText(R.string.correct);
+                    explanation_two.setText(R.string.correct);
+                } else if (!correctAnswer_first.isChecked() && correctAnswer_second.isChecked() && correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup4.clearCheck();
                     radioGroup1.clearCheck();
-                    two.setText(R.string.correct);
-                    three.setText(R.string.correct);
-                } else if (!first.isChecked() && !second.isChecked() && third.isChecked() && fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
-                    two.setText(R.string.explanation_2);
+                    explanation_two.setText(R.string.correct);
+                    explanation_three.setText(R.string.correct);
+                } else if (!correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && correctAnswer_third.isChecked() && correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
+                    explanation_two.setText(R.string.explanation_2);
                     radioGroup2.clearCheck();
                     radioGroup1.clearCheck();
-                    three.setText(R.string.correct);
-                    four.setText(R.string.correct);
-                } else if (first.isChecked() && !second.isChecked() && third.isChecked() && !fourth.isChecked()) {
-                    two.setText(R.string.explanation_2);
-                    four.setText(R.string.explanation_4);
+                    explanation_three.setText(R.string.correct);
+                    explanation_four.setText(R.string.correct);
+                } else if (correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_two.setText(R.string.explanation_2);
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup2.clearCheck();
                     radioGroup4.clearCheck();
-                    one.setText(R.string.correct);
-                    three.setText(R.string.correct);
-                } else if (!first.isChecked() && second.isChecked() && !third.isChecked() && fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
-                    three.setText(R.string.explanation_3);
+                    explanation_one.setText(R.string.correct);
+                    explanation_three.setText(R.string.correct);
+                } else if (!correctAnswer_first.isChecked() && correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
+                    explanation_three.setText(R.string.explanation_3);
                     radioGroup1.clearCheck();
                     radioGroup3.clearCheck();
-                    two.setText(R.string.correct);
-                    four.setText(R.string.correct);
-                } else if (first.isChecked() && !second.isChecked() && !third.isChecked() && fourth.isChecked()) {
-                    two.setText(R.string.explanation_2);
-                    three.setText(R.string.explanation_3);
+                    explanation_two.setText(R.string.correct);
+                    explanation_four.setText(R.string.correct);
+                } else if (correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && correctAnswer_fourth.isChecked()) {
+                    explanation_two.setText(R.string.explanation_2);
+                    explanation_three.setText(R.string.explanation_3);
                     radioGroup2.clearCheck();
                     radioGroup3.clearCheck();
-                    one.setText(R.string.correct);
-                    four.setText(R.string.correct);
-                } else if (first.isChecked() && second.isChecked() && third.isChecked() && !fourth.isChecked()) {
-                    four.setText(R.string.explanation_4);
+                    explanation_one.setText(R.string.correct);
+                    explanation_four.setText(R.string.correct);
+                } else if (correctAnswer_first.isChecked() && correctAnswer_second.isChecked() && correctAnswer_third.isChecked() && !correctAnswer_fourth.isChecked()) {
+                    explanation_four.setText(R.string.explanation_4);
                     radioGroup4.clearCheck();
-                    one.setText(R.string.correct);
-                    two.setText(R.string.correct);
-                    three.setText(R.string.correct);
-                } else if (first.isChecked() && second.isChecked() && !third.isChecked() && fourth.isChecked()) {
-                    three.setText(R.string.explanation_3);
+                    explanation_one.setText(R.string.correct);
+                    explanation_two.setText(R.string.correct);
+                    explanation_three.setText(R.string.correct);
+                } else if (correctAnswer_first.isChecked() && correctAnswer_second.isChecked() && !correctAnswer_third.isChecked() && correctAnswer_fourth.isChecked()) {
+                    explanation_three.setText(R.string.explanation_3);
                     radioGroup3.clearCheck();
-                    one.setText(R.string.correct);
-                    two.setText(R.string.correct);
-                    four.setText(R.string.correct);
-                } else if (first.isChecked() && !second.isChecked() && third.isChecked() && fourth.isChecked()) {
-                    two.setText(R.string.explanation_2);
+                    explanation_one.setText(R.string.correct);
+                    explanation_two.setText(R.string.correct);
+                    explanation_four.setText(R.string.correct);
+                } else if (correctAnswer_first.isChecked() && !correctAnswer_second.isChecked() && correctAnswer_third.isChecked() && correctAnswer_fourth.isChecked()) {
+                    explanation_two.setText(R.string.explanation_2);
                     radioGroup2.clearCheck();
-                    one.setText(R.string.correct);
-                    three.setText(R.string.correct);
-                    four.setText(R.string.correct);
-                } else if (!first.isChecked() && second.isChecked() && third.isChecked() && fourth.isChecked()) {
-                    one.setText(R.string.explanation_1);
+                    explanation_one.setText(R.string.correct);
+                    explanation_three.setText(R.string.correct);
+                    explanation_four.setText(R.string.correct);
+                } else if (!correctAnswer_first.isChecked() && correctAnswer_second.isChecked() && correctAnswer_third.isChecked() && correctAnswer_fourth.isChecked()) {
+                    explanation_one.setText(R.string.explanation_1);
                     radioGroup1.clearCheck();
-                    two.setText(R.string.correct);
-                    three.setText(R.string.correct);
-                    four.setText(R.string.correct);
+                    explanation_two.setText(R.string.correct);
+                    explanation_three.setText(R.string.correct);
+                    explanation_four.setText(R.string.correct);
                 } else {
                     // Uncheck or reset the radio buttons initially
-                    one.setText(R.string.correct);
-                    two.setText(R.string.correct);
-                    three.setText(R.string.correct);
-                    four.setText(R.string.correct);
+                    explanation_one.setText(R.string.correct);
+                    explanation_two.setText(R.string.correct);
+                    explanation_three.setText(R.string.correct);
+                    explanation_four.setText(R.string.correct);
                 }
             }
         });
@@ -293,29 +290,40 @@ public class MainActivity extends AppCompatActivity {
 
     private void addListenerOnChkIos() {
         //Getting instance of CheckBoxes from the activty_main.xml file
-        uno = (CheckBox) findViewById(R.id.checkBox1);
-        dos = (CheckBox) findViewById(R.id.checkBox2);
-        tries = (CheckBox) findViewById(R.id.checkBox3);
-        quatro = (CheckBox) findViewById(R.id.checkBox4);
-        sinco = (CheckBox) findViewById(R.id.checkBox5);
-        seis = (CheckBox) findViewById(R.id.checkBox6);
-        siete = (CheckBox) findViewById(R.id.checkBox7);
-        ocho = (CheckBox) findViewById(R.id.checkBox8);
+        checkBox_uno = (CheckBox) findViewById(R.id.checkBox1);
+        checkBox_dos = (CheckBox) findViewById(R.id.checkBox2);
+        checkBox_tries = (CheckBox) findViewById(R.id.checkBox3);
+        checkBox_quatro = (CheckBox) findViewById(R.id.checkBox4);
+        checkBox_sinco = (CheckBox) findViewById(R.id.checkBox5);
+        checkBox_seis = (CheckBox) findViewById(R.id.checkBox6);
+        checkBox_siete = (CheckBox) findViewById(R.id.checkBox7);
+        checkBox_ocho = (CheckBox) findViewById(R.id.checkBox8);
     }
 
     public void help(View view) {
-        one.setText(R.string.explanation_1);
-        two.setText(R.string.explanation_2);
-        three.setText(R.string.explanation_3);
-        four.setText(R.string.explanation_4);
-        five.setText(R.string.explanation_5);
-        six.setText(R.string.explanation_6);
-        seven.setText(R.string.explanation_7);
-        eight.setText(R.string.explanation_8);
-
-
+        explanation_one.setText(R.string.explanation_1);
+        explanation_two.setText(R.string.explanation_2);
+        explanation_three.setText(R.string.explanation_3);
+        explanation_four.setText(R.string.explanation_4);
+        explanation_five.setText(R.string.explanation_5);
+        explanation_six.setText(R.string.explanation_6);
+        explanation_seven.setText(R.string.explanation_7);
+        explanation_eight.setText(R.string.explanation_8);
     }
 
+    /**
+    * This method should clean all selection of all radio groups
+    **/
+    public void resetAllRadioSelections(){
+        radioGroup1.clearCheck();
+        radioGroup2.clearCheck();
+        radioGroup3.clearCheck();
+        radioGroup4.clearCheck();
+    }
+
+    /**
+     * This method shows toast messages in red text
+     **/
     public void toastMessage(int resource) {
         Toast toast = Toast.makeText(getApplicationContext(), getText(resource), Toast.LENGTH_SHORT);
         TextView toastMessage = (TextView) toast.getView().findViewById(android.R.id.message);
